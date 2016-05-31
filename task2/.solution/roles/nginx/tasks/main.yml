@@ -1,0 +1,7 @@
+---
+- name: Install
+  apt:
+    name: nginx
+    state: latest
+
+- include: configure.yml

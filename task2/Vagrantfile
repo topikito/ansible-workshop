@@ -1,0 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = '2'
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = 'geerlingguy/ubuntu1604'
+  config.ssh.forward_agent = true
+
+  config.vm.define 'machine1' do |machine1|
+    machine1.vm.network 'private_network', ip:'10.1.2.4'
+    machine1.vm.provider 'virtualbox' do |v|
+      v.name = 'machine-1'
+    end
+  end
+
+end
+

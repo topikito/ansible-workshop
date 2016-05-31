@@ -1,0 +1,8 @@
+---
+# FRONT END
+- hosts: frontends
+
+  become: yes
+
+  roles:
+    - nginx

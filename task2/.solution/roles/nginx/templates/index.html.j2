@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Hi there!</title>
+	</head>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+	<body style="margin:0px;padding:0px;overflow:hidden;text-align:center">
+		<script>
+			var search = encodeURI('{{ search }}');
+			var xhr = $.get("http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + search);
+	        xhr.done(function(data) { console.log("success got data", data); $('#foo').attr('src',data.data.image_url); });
+        </script>
+
+		<h1>Hello!</h1>
+		<h2>Searching for {{ search }}??</h2>
+        <img src="" id="foo">
+	</body>
+
+</html>
